@@ -1,7 +1,8 @@
 
-I Chose WeatherAPI.com 
-logged in got an API-Key
-and then selected all relevant API-variables on their dashboard 
+- Chose weatherAPI
+- logged in got an API-Key
+- selected all relevant response-variables in the web_interface
+- set up call function, fetched data and saved to file to save resources while writing codebase
 __________________________________________________________________
 
 Current Weather Data Only:  
