@@ -19,10 +19,10 @@ class WeatherSense:
         try:
             if test == 'no':
                 response = r.get('http://api.weatherapi.com/v1/current.json', params=params)
-                data = response.json
+                data = response.json()
             else:
                 with open('weather_data.json','r') as file:
-                    data = json.loads(file)
+                    data = json.load(file)
             # Extrahieren der Werte für WeatherCondition
             temperature = data["current"]["temp_c"]
             humidity = data["current"]["humidity"]
