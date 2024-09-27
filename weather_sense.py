@@ -1,6 +1,8 @@
 import requests as r
 from private import *
 import json
+from typing_effect import typing_effect
+
 
 
 class WeatherSense:
@@ -63,35 +65,35 @@ class WeatherSense:
     def handle_get_weather_error(e):
 
         if isinstance(e, r.exceptions.ConnectionError):
-            print("Error: Failed to connect to the weather API. Check your network connection.")
+            typing_effect("Error: Failed to connect to the weather API. Check your network connection.")
         elif isinstance(e, r.exceptions.Timeout):
-            print("Error: The request to the weather API timed out.")
+            typing_effect("Error: The request to the weather API timed out.")
         elif isinstance(e, r.exceptions.HTTPError):
-            print(f"HTTP error occurred: {e}")
+            typing_effect(f"HTTP error occurred: {e}")
         elif isinstance(e, ValueError):
-            print("Error: Received an invalid response (possibly not JSON).")
+            typing_effect("Error: Received an invalid response (possibly not JSON).")
         else:
-            print(f"An unexpected error occurred: {e}")
+            typing_effect(f"An unexpected error occurred: {e}")
 
     def display_weather(self):
         if self.condition:
-            print(f"City: {self.condition.city}")
-            print(f"Region: {self.condition.region}")
-            print(f"Country: {self.condition.country}")
-            print(f"Local Time: {self.condition.localtime}")
-            print(f"Temperature: {self.condition.temperature} °C")
-            print(f"Humidity: {self.condition.humidity}%")
-            print(f"Wind Speed: {self.condition.wind_speed} km/h")
-            print(f"Precipitation: {self.condition.precipitation} mm")
-            print(f"Feels Like: {self.condition.feels_like} °C")
-            print(f"Wind Chill: {self.condition.wind_chill} °C")
-            print(f"Heat Index: {self.condition.heat_index} °C")
-            print(f"Dew Point: {self.condition.dew_point} °C")
-            print(f"UV Index: {self.condition.uv_index}")
-            print(f"Cloud Cover: {self.condition.cloud_cover}%")
-            print(f"Gust Speed: {self.condition.gust_speed} km/h")
+            typing_effect(f"City: {self.condition.city}")
+            typing_effect(f"Region: {self.condition.region}")
+            typing_effect(f"Country: {self.condition.country}")
+            typing_effect(f"Local Time: {self.condition.localtime}")
+            typing_effect(f"Temperature: {self.condition.temperature} °C")
+            typing_effect(f"Humidity: {self.condition.humidity}%")
+            typing_effect(f"Wind Speed: {self.condition.wind_speed} km/h")
+            typing_effect(f"Precipitation: {self.condition.precipitation} mm")
+            typing_effect(f"Feels Like: {self.condition.feels_like} °C")
+            typing_effect(f"Wind Chill: {self.condition.wind_chill} °C")
+            typing_effect(f"Heat Index: {self.condition.heat_index} °C")
+            typing_effect(f"Dew Point: {self.condition.dew_point} °C")
+            typing_effect(f"UV Index: {self.condition.uv_index}")
+            typing_effect(f"Cloud Cover: {self.condition.cloud_cover}%")
+            typing_effect(f"Gust Speed: {self.condition.gust_speed} km/h")
         else:
-            print("No weather data available.")
+            typing_effect("No weather data available.")
 
     class WeatherCondition:
         """Class to represent the weather conditions."""
