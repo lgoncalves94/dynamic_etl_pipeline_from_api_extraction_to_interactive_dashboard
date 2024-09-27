@@ -77,23 +77,23 @@ class WeatherSense:
 
     def display_weather(self):
         if self.condition:
-            typing_effect(f"City: {self.condition.city}")
-            typing_effect(f"Region: {self.condition.region}")
-            typing_effect(f"Country: {self.condition.country}")
-            typing_effect(f"Local Time: {self.condition.localtime}")
-            typing_effect(f"Temperature: {self.condition.temperature} °C")
-            typing_effect(f"Humidity: {self.condition.humidity}%")
-            typing_effect(f"Wind Speed: {self.condition.wind_speed} km/h")
-            typing_effect(f"Precipitation: {self.condition.precipitation} mm")
-            typing_effect(f"Feels Like: {self.condition.feels_like} °C")
-            typing_effect(f"Wind Chill: {self.condition.wind_chill} °C")
-            typing_effect(f"Heat Index: {self.condition.heat_index} °C")
-            typing_effect(f"Dew Point: {self.condition.dew_point} °C")
-            typing_effect(f"UV Index: {self.condition.uv_index}")
-            typing_effect(f"Cloud Cover: {self.condition.cloud_cover}%")
-            typing_effect(f"Gust Speed: {self.condition.gust_speed} km/h")
+            typing_effect(f"City: {self.condition.city}",speed='fast')
+            typing_effect(f"Region: {self.condition.region}",speed='fast')
+            typing_effect(f"Country: {self.condition.country}",speed='fast')
+            typing_effect(f"Local Time: {self.condition.localtime}",speed='fast')
+            typing_effect(f"Temperature: {self.condition.temperature} °C",speed='fast')
+            typing_effect(f"Humidity: {self.condition.humidity}%",speed='fast')
+            typing_effect(f"Wind Speed: {self.condition.wind_speed} km/h",speed='fast')
+            typing_effect(f"Precipitation: {self.condition.precipitation} mm",speed='fast')
+            typing_effect(f"Feels Like: {self.condition.feels_like} °C",speed='fast')
+            typing_effect(f"Wind Chill: {self.condition.wind_chill} °C",speed='fast')
+            typing_effect(f"Heat Index: {self.condition.heat_index} °C",speed='fast')
+            typing_effect(f"Dew Point: {self.condition.dew_point} °C",speed='fast')
+            typing_effect(f"UV Index: {self.condition.uv_index}",speed='fast')
+            typing_effect(f"Cloud Cover: {self.condition.cloud_cover}%",speed='fast')
+            typing_effect(f"Gust Speed: {self.condition.gust_speed} km/h",speed='fast')
         else:
-            typing_effect("No weather data available.")
+            typing_effect("No weather data available.",speed='fast')
 
     class WeatherCondition:
         """Class to represent the weather conditions."""

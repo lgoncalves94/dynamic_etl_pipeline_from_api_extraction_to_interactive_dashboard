@@ -13,6 +13,6 @@ while True:
             WeatherSense.main('no') # Fetch latest data
             break
         case _ :
-            typing_effect('Answer with **yes** or **no** please ')
+            typing_effect('Answer with **yes** or **no** please\n')
 
 
