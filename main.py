@@ -1,11 +1,15 @@
-import json
-import pandas as pd
-from utils import *
+from weather_sense import WeatherSense
 
-get_weather_input()
-with open('weather_data.txt','r') as file:
-    parsed_data = json.load(file)
+while True:
+    choice = input("Read from file ? answer >yes<>no< to fetch current data >").lower()
+    match choice:
+        case 'yes':
+             WeatherSense.main('yes') # Read from file
+             break
+        case 'no' :
+            WeatherSense.main('no') # Fetch latest data
+            break
+        case _ :
+            print('Answer with **yes** or **no** please ')
 
-full_dict = parsed_data['location'] | parsed_data['current']
-df = clean_df_inplace(full_dict)
-print(df)
+
